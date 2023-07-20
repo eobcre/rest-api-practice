@@ -6,3 +6,7 @@ const express = require('express');
 const app = express();
 // for local server
 app.listen(3000, console.log('server is on'));
+
+app.get('/', (req, res) => {
+  res.send('test');
+});

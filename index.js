@@ -34,3 +34,8 @@ const data = [
     id: 5,
   },
 ];
+
+// getting data logic (GET) and addressability
+app.get('/api/data', (req, res) => {
+  res.send(data);
+});

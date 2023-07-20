@@ -39,3 +39,9 @@ const data = [
 app.get('/api/data', (req, res) => {
   res.send(data);
 });
+
+// endpoint
+app.get('/api/data/:id', (req, res) => {
+  const findData = data.find((x) => x.id === parseInt(req.params.id));
+  res.send(findData);
+});

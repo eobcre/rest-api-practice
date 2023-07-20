@@ -10,3 +10,27 @@ app.listen(3000, console.log('server is on'));
 app.get('/', (req, res) => {
   res.send('test');
 });
+
+// data in server (json format)
+const data = [
+  {
+    name: 'David',
+    id: 1,
+  },
+  {
+    name: 'Linda',
+    id: 2,
+  },
+  {
+    name: 'Chris',
+    id: 3,
+  },
+  {
+    name: 'Ryan',
+    id: 4,
+  },
+  {
+    name: 'Kelly',
+    id: 5,
+  },
+];

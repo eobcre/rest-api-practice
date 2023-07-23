@@ -4,7 +4,9 @@
 const express = require('express');
 // execute express
 const app = express();
-// for local server
+// convert to json format
+app.use(express.json());
+// start the local server
 app.listen(3000, console.log('server is on'));
 
 app.get('/', (req, res) => {
@@ -44,4 +46,16 @@ app.get('/api/data', (req, res) => {
 app.get('/api/data/:id', (req, res) => {
   const findData = data.find((x) => x.id === parseInt(req.params.id));
   res.send(findData);
+});
+
+// create and add more people on data (POST)
+app.post('/api/data', (req, res) => {
+  console.log(req.body);
+
+  const addData = {
+    name: req.body.name || 'Default Name',
+    id: data.length + 1,
+  };
+  data.push(addData);
+  res.send(data);
 });

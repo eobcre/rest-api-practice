@@ -67,3 +67,11 @@ app.put('/api/data/:id', (req, res) => {
   findData.name = req.body.name;
   res.send(findData);
 });
+
+// delete
+app.delete('/api/data/:id', (req, res) => {
+  const findData = data.find((x) => x.id === parseInt(req.params.id));
+  const index = data.indexOf(indexData);
+  data.splice(index, 1);
+  res.send(findData);
+});

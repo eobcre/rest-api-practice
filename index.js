@@ -59,3 +59,11 @@ app.post('/api/data', (req, res) => {
   data.push(addData);
   res.send(data);
 });
+
+// update data (PUT)
+app.put('/api/data/:id', (req, res) => {
+  const findData = data.find((x) => x.id === parseInt(req.params.id));
+  res.send(findData);
+  findData.name = req.body.name;
+  res.send(findData);
+});
